@@ -1,0 +1,132 @@
+body {
+        background-color: #deb887;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .main {
+        background-color: #466044;
+        width: 400px;
+        height: 400px;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        margin-top: 260px;
+    }
+    
+    .sign {
+        padding-top: 40px;
+        color: #deb887;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        font-size: 28px;
+        margin-top: 10px;
+    }
+    
+    .un {
+    width: 76%;
+    color: rgb(233, 208, 175);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgb(78, 103, 75);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Poppins', sans-serif;
+    }
+    
+    form.form1 {
+        padding-top: 40px;
+    }
+    
+    .pass {
+    width: 76%;
+    color: rgb(233, 208, 175);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgb(78, 103, 75);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Poppins', sans-serif;
+    }
+    
+   
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        
+    }
+    
+    .submit {
+      cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, #c48949,  #d59c5f);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Poppins', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #e9d0af;
+        padding-top: 15px;
+    }
+    
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #e9d0af;
+        text-decoration: none
+    }
+
+    input::placeholder {
+        color: #fce3c2; /* Substitua #FF0000 pela cor desejada em hexadecimal ou nome da cor */
+    }
+    
+    @media (max-width: 600px) {
+        .main {
+            border-radius: 0px;
+        }
+    }
+
+    .custom-alert {
+        background-color: #466044; /* Cor de fundo cinza */
+        color: white; /* Cor do texto preto */
+        padding: 10px; /* Preenchimento interno */
+        text-align: center; /* Centralizar o texto */
+        position: fixed; /* Alterado para posição fixa para que o alerta fique fixo no topo */
+        top: 100px; /* Distância maior do topo */
+        left: 50%; /* Centralizar horizontalmente no topo */
+        transform: translateX(-50%); /* Centralizar horizontalmente */
+        width: 20%; /* Largura de 40% (diminuída) */
+        z-index: 9999; /* Z-index alto para sobrepor outros elementos */
+        display: none; /* Oculto por padrão */
+        border-radius: 10px; /* Borda arredondada com um valor menor */
+        border: 1px solid #999; /* Borda com 1px de espessura */
+      }
+  
+      /* Estilo para o texto do alerta */
+      #custom-alert-text {
+        font-size: 16px; /* Tamanho da fonte */
+      }

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tela de cadastro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style_cadastro.css">
+</head>
+<body>
+  <div class="container">
+    <div class="img">
+      <div class="news__img">
+        <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1696600619/logoo_hkp03s.png" alt="news" class="w-20 h-20 rounded-full" viewBox="0 0 24 24">
+      </div>
+    </div>
+    <div class="tela-cadastro">
+      <form action="cadastra.php" method="post" id="cadastro-form">
+        <svg class="fingerprint" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" width="70" height="70" viewBox="0 0 355 355" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Seu código SVG aqui -->
+        </svg>
+        <h2>Bem-vindo</h2>
+        <div class="input-div">
+          <div class="icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div>
+            <input type="text" placeholder="Nome" id="nome" name="nome" class="input">
+          </div>
+        </div>
+        <div class="input-div">
+          <div class="icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <input type="email" placeholder="E-mail" id="email" name="email" class="input">
+          </div>
+        </div>
+        <div class="input-div first">
+          <div class="icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <input type="tel" placeholder="Telefone" id="telefone" name="telefone" class="input">
+          </div>
+        </div>
+        <div class="input-div last">
+          <div class="icon">
+            <i class="fas fa-unlock-alt"></i>
+          </div>
+          <div>
+            <input type="password" placeholder="Senha" id="senha" name="senha" class="input">
+          </div>
+        </div>
+        <input class="btn" type="submit" value="Cadastrar">
+      </form>
+      <div class="modal" id="modal">
+        <div class="modal-content" id="modal-content">
+          <span id="modal-message">Preencha todos os campos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("modal");
+      const modalContent = document.getElementById("modal-content");
+      const modalMessage = document.getElementById("modal-message");
+      const form = document.getElementById("cadastro-form");
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const telefone = document.getElementById("telefone").value;
+        const senha = document.getElementById("senha").value;
+
+        if (nome === "" || email === "" || telefone === "" || senha === "") {
+          modal.style.display = "block"; // Exibir o modal
+          modalMessage.innerText = "Preencha todos os campos";
+        } else {
+          const formData = new FormData(form);
+
+          try {
+            const response = await fetch("cadastra.php", {
+              method: "POST",
+              body: formData,
+            });
+
+            if (response.ok) {
+              const data = await response.text();
+
+              if (data === "Cadastrado com sucesso") {
+                modalMessage.innerText = "Cadastrado com sucesso";
+
+                setTimeout(function () {
+                  window.location.href = 'http://localhost/tcc%20-%20Copia/tela_login.php';
+                }, 500);
+              } else {
+                modalMessage.innerText = data;
+              }
+            } else {
+              modalMessage.innerText = "Erro ao cadastrar";
+            }
+          } catch (error) {
+            modalMessage.innerText = "Erro ao cadastrar";
+            console.error("Erro de requisição:", error);
+          }
+        }
+      });
+
+      // Fechar o modal ao clicar em qualquer lugar da tela
+      window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none"; // Ocultar o modal
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style_mitos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Quiz Mito ou Fato</title>
+
+</head>
+<body>
+    <header>
+        <!-- Seu cabeçalho aqui... -->
+         
+               <div class="header-image">
+                <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1693999023/Novo_Projeto_oqfozm.png" alt="Sua Imagem">
+            </div>
+          
+            <div class="button-container">
+                <div class="dropdown">
+                    <button class="dropdown-button">Saúde Mental</button>
+                    <div class="dropdown-content">
+                        <a href="http://localhost/tcc%20-%20Copia/tela_apresentacao.php">Apresentação/Quem Somos</a>
+                        <a href="http://localhost/tcc%20-%20Copia/tela_oq_saudemental.html">O que é saúde mental?</a>
+                        <a href="http://localhost/tcc%20-%20Copia/tela_mitos.html#">Mitos e fatos</a>
+                        <a href="http://localhost/tcc%20-%20Copia/tela_emocoes.html">Emoções</a>
+      
+                    </div>
+                  </div>
+      
+                  <button id="meuBotao" class="custom-button">Onde buscar ajuda?</button>
+                <button id="meuBotao1" class="custom-button">Relatos/Depoimentos</button>
+                <button id="meuBotao2" class="custom-button">Como você está hoje?</button>
+                <button id="meuBotao3" class="custom-button">Diário Privado</button>
+                <button id="meuBotao4" class="custom-button">Perfil</button>
+            </div>
+    </header>
+
+    <div class="container">
+        <img src="imagens/quiz.png" alt="Imagem 1" class="image1">
+        <img src="imagens/imgquiz.png" alt="Imagem 1" class="image2">
+    </div>
+
+    <div>
+         <p class="text">O quiz é uma divertida e educativa maneira de testar seus conhecimentos sobre saúde mental. Este jogo é uma oportunidade não apenas de se divertir, mas também de aprender mais sobre como a saúde mental funciona e adquirir conhecimento!</p>
+    <!-- Adicione a seta com a classe "arrow" 
+    <div class="arrow"></div> -->
+    </div>
+
+    <div id="fireworks-container">
+        <img src="https://media.giphy.com/media/ll1dsS6ljOtxwWu4cS/giphy.gif" alt="Fogos de Artifício" id="fireworksGif">
+    </div>
+    
+    <div id="game-container">
+        <p id="question"></p>
+        <ul id="answers-container">
+            <li class="answer"></li>
+            <li class="answer"></li>
+        </ul>
+        <div id="result-container" style="display: none;">
+            <h2>Resultados:</h2>
+            <ul id="results-list"></ul>
+        </div>
+        <button id="show-results-button" class="custom-button" style="display: none;">Ver Resultados</button>
+        <button id="restart-button" class="custom-button" style="display: none;">Reiniciar</button>
+    </div>
+    
+    <script>
+
+const questionElement = document.getElementById("question");
+const answersContainer = document.getElementById("answers-container");
+const answerElements = document.getElementsByClassName("answer");
+const fireworksGif = document.getElementById("fireworksGif");
+const restartButton = document.getElementById("restart-button");
+const resultContainer = document.getElementById("result-container");
+const resultsList = document.getElementById("results-list");
+
+const explanations = [
+    "Depressão nem sempre se manifesta como tristeza constante. Pode incluir sentimentos de vazio e falta de interesse.",
+    "Falar sobre seus sentimentos geralmente ajuda a lidar com eles, não piora a situação.",
+    "Os sintomas de transtornos de ansiedade variam e podem incluir ataques de pânico, preocupações excessivas, fobias e outros.",
+    "Transtornos mentais não são sinal de fraqueza. Eles podem ser causados por diversos fatores, incluindo genética e ambiente.",
+    "A automedicação pode ser perigosa e piorar os problemas de saúde mental. É importante buscar orientação de um profissional de saúde.",
+    "Nem todos os transtornos mentais são hereditários. Alguns de fato são, mas outros têm uma base genética, enquanto outros são influenciados pelo ambiente e experiências de vida.",
+    "A prática regular de exercícios físicos tem demonstrado benefícios para a saúde mental, incluindo a redução do estresse e a melhoria do bem-estar."
+];
+
+const questions = [
+    {
+        question: "Mito ou Fato: Todos que têm depressão estão constantemente tristes?",
+        answers: ["Mito", "Fato"],
+        correctAnswer: "Mito",
+        explanation: explanations[0]
+    },
+    {
+        question: "Mito ou Fato: Falar sobre seus sentimentos torna a situação pior?",
+        answers: ["Mito", "Fato"],
+        correctAnswer: "Mito",
+        explanation: explanations[1]
+    },
+    {
+        question: "Mito ou Fato: A prática regular de exercícios físicos ajuda na saúde mental?",
+        answers: ["Mito", "Fato"],
+        correctAnswer: "Fato",
+        explanation: explanations[6]
+    },
+    {
+        question: "Mito ou Fato: Todas as pessoas com transtorno de ansiedade têm os mesmos sintomas?",
+        answers: ["Mito", "Fato"],
+        correctAnswer: "Mito",
+        explanation: explanations[2]
+    },
+    {
+        question: "Mito ou Fato: Todos os transtornos mentais são hereditários?",
+        answers: ["Mito", "Fato"],
+        correctAnswer: "Mito",
+        explanation: explanations[5]
+    },
+    {
+        question: "Mito ou Fato: Transtornos mentais não são sinônimo de fraqueza",
+        answers: ["Mito", "Fato"],
+        correctAnswer: "Fato",
+        explanation: explanations[3]
+    },
+    {
+        question: "Mito ou Fato: A automedicação é uma abordagem segura para tratar problemas de saúde mental?",
+        answers: ["Mito", "Fato"],
+        correctAnswer: "Mito",
+        explanation: explanations[4]
+    }
+];
+
+let currentQuestion = 0;
+const userAnswers = [];
+
+function displayQuestion(questionIndex) {
+    if (questionIndex < questions.length) {
+        questionElement.textContent = questions[questionIndex].question;
+        for (let i = 0; i < answerElements.length; i++) {
+            answerElements[i].textContent = questions[questionIndex].answers[i];
+        }
+    } else {
+        questionElement.textContent = "Fim do jogo!";
+        answersContainer.style.display = "none";
+        showResults();
+    }
+    answersContainer.style.display = (questionIndex < questions.length) ? "block" : "none";
+    fireworksGif.style.display = (questionIndex === questions.length) ? "block" : "none";
+}
+
+function checkAnswer(selectedAnswer) {
+    if (currentQuestion < questions.length) {
+        const correctAnswer = questions[currentQuestion].correctAnswer;
+        userAnswers.push(selectedAnswer);
+        currentQuestion++;
+        displayQuestion(currentQuestion);
+    }
+}
+
+for (let i = 0; i < answerElements.length; i++) {
+    answerElements[i].addEventListener("click", function () {
+        checkAnswer(this.textContent);
+    });
+}
+
+restartButton.addEventListener("click", function () {
+    currentQuestion = 0;
+    userAnswers.length = 0;
+    displayQuestion(currentQuestion);
+    resultContainer.style.display = "none";
+    fireworksGif.style.display = "none";
+    restartButton.style.display = "none";
+});
+
+function showResults() {
+    resultsList.innerHTML = "";
+
+    questions.forEach((question, index) => {
+        const resultItem = document.createElement("li");
+        resultItem.textContent = `Questão ${index + 1}: ${
+            userAnswers[index] === question.correctAnswer ? "Correta" : "Incorreta"
+        }`;
+        resultItem.style.color = userAnswers[index] === question.correctAnswer ? "green" : "red";
+
+        const explanationElement = document.createElement("p");
+        explanationElement.textContent = `Explicação: ${question.explanation}`;
+        explanationElement.style.fontStyle = "italic";
+
+        resultsList.appendChild(resultItem);
+        resultsList.appendChild(explanationElement);
+    });
+
+    resultContainer.style.display = "block";
+    restartButton.style.display = "block";
+}
+
+displayQuestion(currentQuestion);
+
+
+    </script>
+
+<script>
+    // Selecione o botão e a tela de destino pelo ID
+    var meuBotao = document.getElementById('meuBotao');
+    var telaDestino = document.getElementById('telaDestino');
+  
+    // Adicione um evento de clique ao botão
+    meuBotao.addEventListener('click', function() {
+        // Redirecione para a tela de destino (substitua 'URL_DA_TELA_DESTINO' pelo URL correto ou caminho para a tela)
+        window.location.href = 'http://localhost/tcc%20-%20Copia/tela_ondebuscar.html';
+    });
+  </script>
+
+<script>
+// Selecione o botão e a tela de destino pelo ID
+var meuBotao1 = document.getElementById('meuBotao1');
+var telaDestino = document.getElementById('telaDestino');
+
+// Adicione um evento de clique ao botão
+meuBotao1.addEventListener('click', function() {
+    // Redirecione para a tela de destino (substitua 'URL_DA_TELA_DESTINO' pelo URL correto ou caminho para a tela)
+    window.location.href = 'http://localhost/tcc%20-%20Copia/tela_relatos.html';
+});
+</script>
+
+<script>
+    // Selecione o botão e a tela de destino pelo ID
+    var meuBotao2 = document.getElementById('meuBotao2');
+    var telaDestino = document.getElementById('telaDestino');
+    
+    // Adicione um evento de clique ao botão
+    meuBotao2.addEventListener('click', function() {
+        // Redirecione para a tela de destino (substitua 'URL_DA_TELA_DESTINO' pelo URL correto ou caminho para a tela)
+        window.location.href = 'http://localhost/tcc%20-%20Copia/tela_nivelemocoes.html';
+    });
+    </script>
+
+<script>
+// Selecione o botão e a tela de destino pelo ID
+var meuBotao3 = document.getElementById('meuBotao3');
+var telaDestino = document.getElementById('telaDestino');
+
+// Adicione um evento de clique ao botão
+meuBotao3.addEventListener('click', function() {
+    // Redirecione para a tela de destino (substitua 'URL_DA_TELA_DESTINO' pelo URL correto ou caminho para a tela)
+    window.location.href = 'http://localhost/tcc%20-%20Copia/tela_diarioprivado.php';
+});
+</script>
+
+<script>
+// Selecione o botão e a tela de destino pelo ID
+var meuBotao4 = document.getElementById('meuBotao4');
+var telaDestino = document.getElementById('telaDestino');
+
+// Adicione um evento de clique ao botão
+meuBotao4.addEventListener('click', function() {
+    // Redirecione para a tela de destino (substitua 'URL_DA_TELA_DESTINO' pelo URL correto ou caminho para a tela)
+    window.location.href = 'http://localhost/tcc%20-%20Copia/tela_perfil.php';
+});
+</script>
+
+<footer>
+    &copy; 2023 Mindful Harmony     
+
+  </footer>
+</body>
+</html>

@@ -1,0 +1,311 @@
+/* Reset de estilos */
+:root {
+  /* COLORS */
+  --bege:  #cf8b47;
+  --lightbege:  #deb887;
+  --verde: #466044;
+  --lightverde: #95cf81;
+}
+
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bege);
+  background-image: linear-gradient(
+      90deg,
+      var(--bege) 20%,
+      var(--lightbege) 90%
+  );
+
+}
+
+.container {
+  max-width: 410px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #466044;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+}
+
+.user-icon {
+  text-align: center;
+  font-size: 60px;
+  color: #466044;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #466044;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #cccccc;
+}
+
+.form-group input[type="submit"] {
+  background: #466044;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  width: auto;
+  margin: 0 auto; /* Adicione esta linha para centralizar horizontalmente */
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.form-group input[type="submit"]:hover {
+  background: #95cf81;
+}
+
+.form-group button#excluir-perfil {
+  background: #466044;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  width: auto;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  margin-top: 20px;
+  border-radius: 20px;
+}
+.form-group button#excluir-perfil:hover {
+    background: #95cf81;
+}
+
+header {
+  background-color: var(--verde);
+  background-image: linear-gradient(
+      90deg,
+      var(--verde) 20%,
+      var(--lightverde) 90%
+  );
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-image {
+  margin-right: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.custom-button {
+  background-color:  #d59c5f;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-right: 10px;
+}
+
+.custom-button:hover {
+  background-color: #cd853f;
+  color: #ffffff;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.dropdown-button {
+  background-color: #d59c5f;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #deb887;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 20px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 20px;
+}
+
+.dropdown-content a:hover {
+  background-color: #e7af77;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #8a9c84;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+footer img {
+  width: 100px; /* Ajuste o tamanho conforme necessário */
+  margin: 2px; /* Adicione margens conforme necessário */
+}
+
+/* Estilo para o alerta personalizado */
+.custom-alert {
+  background-color: #466044; /* Cor de fundo cinza */
+  color: white; /* Cor do texto preto */
+  padding: 10px; /* Preenchimento interno */
+  text-align: center; /* Centralizar o texto */
+  position: fixed; /* Alterado para posição fixa para que o alerta fique fixo no topo */
+  top: 100px; /* Distância maior do topo */
+  left: 50%; /* Centralizar horizontalmente no topo */
+  transform: translateX(-50%); /* Centralizar horizontalmente */
+  width: 20%; /* Largura de 40% (diminuída) */
+  z-index: 9999; /* Z-index alto para sobrepor outros elementos */
+  display: none; /* Oculto por padrão */
+  border-radius: 10px; /* Borda arredondada com um valor menor */
+  border: 1px solid #999; /* Borda com 1px de espessura */
+}
+
+/* Estilo para o texto do alerta */
+#custom-alert-text {
+  font-size: 16px; /* Tamanho da fonte */
+}
+
+#custom-alert {
+  background-color: #466044; /* Cor de fundo cinza */
+  color: white; /* Cor do texto preto */
+  padding: 10px; /* Preenchimento interno */
+  text-align: center; /* Centralizar o texto */
+  position: fixed; /* Alterado para posição fixa para que o alerta fique fixo no topo */
+  top: 100px; /* Distância maior do topo */
+  left: 50%; /* Centralizar horizontalmente no topo */
+  transform: translateX(-50%); /* Centralizar horizontalmente */
+  width: 20%; /* Largura de 40% (diminuída) */
+  z-index: 9999; /* Z-index alto para sobrepor outros elementos */
+  display: none; /* Oculto por padrão */
+  border-radius: 10px; /* Borda arredondada com um valor menor */
+  border: 1px solid #999; /* Borda com 1px de espessura */
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 0;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+/* Estilo para o modal de exclusão com base no estilo do alerta */
+.modal {
+  background-color: #466044; /* Cor de fundo cinza */
+  color: white; /* Cor do texto branco */
+  padding: 10px; /* Preenchimento interno */
+  text-align: center; /* Centralizar o texto */
+  position: fixed; /* Alterado para posição fixa para que o modal fique fixo no topo */
+  top: 100px; /* Distância do topo */
+  left: 50%; /* Centralizar horizontalmente */
+  transform: translateX(-50%); /* Centralizar horizontalmente */
+  width: 30%; /* Aumente a largura do modal para 30% */
+  max-height: 100px; /* Reduza a altura máxima do modal para 150px */
+  z-index: 9999; /* Z-index alto para sobrepor outros elementos */
+  display: none; /* Oculto por padrão */
+  border-radius: 10px; /* Borda arredondada com um valor menor */
+  border: 1px solid #999; /* Borda com 1px de espessura */
+  overflow: hidden;
+  width: 40%; /* Aumente a largura do modal para 50% */
+}
+
+
+/* Estilo para o conteúdo do modal de exclusão */
+.modal-body {
+  font-size: 16px; /* Aumente o tamanho da fonte do conteúdo */
+  padding: 5px; /* Reduza o preenchimento interno */
+}
+
+/* Estilo para os botões do modal de exclusão */
+.modal-footer {
+  justify-content: center;
+  margin-top: 5px; /* Reduza a margem acima dos botões */
+}
+
+/* Estilo para o botão "Cancelar" do modal de exclusão */
+.btn-secondary {
+  background-color: #999;
+  color: white;
+  border: none;
+  margin-right: 5px; /* Reduza a margem direita dos botões */
+  font-family: 'Poppins', sans-serif;
+  padding: 3px 6px; /* Reduza o tamanho dos botões */
+}
+
+/* Estilo para o botão "OK" do modal de exclusão */
+#confirmarExclusao {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  padding: 3px 6px; /* Reduza o tamanho dos botões */
+}

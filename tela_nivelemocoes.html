@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_nivelemocao.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Como você está hoje?</title>
+
+</head>
+<body>
+    <header>
+      
+
+
+        <div class="header-image">
+            <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1693999023/Novo_Projeto_oqfozm.png" alt="Sua Imagem">
+        </div>
+      
+        <div class="button-container">
+            <div class="dropdown">
+                <button class="dropdown-button">Saúde Mental</button>
+                <div class="dropdown-content">
+                    <a href="http://localhost/tcc%20-%20Copia/tela_apresentacao.php">Apresentação/Quem Somos</a>
+                    <a href="http://localhost/tcc%20-%20Copia/tela_oq_saudemental.html">O que é saúde mental?</a>
+                    <a href="http://localhost/tcc%20-%20Copia/tela_mitos.html#">Mitos e fatos</a>
+                    <a href="http://localhost/tcc%20-%20Copia/tela_emocoes.html">Emoções</a>
+                </div>
+              </div>
+    
+              <button id="meuBotao" class="custom-button">Onde buscar ajuda?</button>
+            <button id="meuBotao1" class="custom-button">Relatos/Depoimentos</button>
+            <button id="meuBotao2" class="custom-button">Como você está hoje?</button>
+            <button id="meuBotao3" class="custom-button">Diário Privado</button>
+            <button id="meuBotao4" class="custom-button">Perfil</button>
+        </div>
+
+    </header>
+
+    <div class="container">
+        <img src="imagens/como.png" alt="Imagem 1" class="image1">
+    </div>
+
+    <div>
+        <p class="text">O formulário de verificação de emoções permite que você classifique suas emoções em uma escala de 0 a 3, indicando intensidade zero, baixa (1), média (2) ou alta (3). Após submeter suas escolhas, receberá um feedback com mensagens de incentivo, alertas e links úteis com base em suas emoções. <br><br> Em caso de alto nível (3) em emoções negativas, serão exibidos vídeos de apoio feitos pro profissionais. Use esta ferramenta para aumentar a autoconsciência e o autocuidado, lembrando que a ferramenta está disponível para ajudá-lo a compreender e lidar com suas emoções.</p>
+    </div>
+
+    <!-- Conteúdo adicional para a verificação de emoções -->
+    <div class="content-container">
+        <h2></h2>
+        <form id="emotions-form">
+      
+            <div class="emotion">
+                <label for="tristeza">Tristeza:</label>
+                <input type="number" id="tristeza" name="tristeza" min="0" max="3" required>
+            </div>
+            <div class="emotion">
+                <label for="raiva">Raiva:</label>
+                <input type="number" id="raiva" name="raiva" min="0" max="3" required>
+            </div>
+            <div class="emotion">
+                <label for="medo">Medo:</label>
+                <input type="number" id="medo" name="medo" min="0" max="3" required>
+            </div>
+            <div class="emotion">
+                <label for="ansiedade">Ansiedade:</label>
+                <input type="number" id="ansiedade" name="ansiedade" min="0" max="3" required>
+            </div>
+            <div class="emotion">
+                <label for="apatia">Apatia:</label>
+                <input type="number" id="apatia" name="apatia" min="0" max="3" required>
+            </div>
+            
+            <button class= "formbutton" type="submit">Verificar Emoções</button>
+            <button class="formbutton" type="button" onclick="limparFormulario()">Limpar</button>
+        </form>
+
+    </div>
+
+
+
+<!-- Emoção: Raiva -->
+<div id="Raiva-message" class="emotion-message hidden video-container">
+    <button class="close-button" onclick="closeVideo('Raiva-message')">X</button>
+    <iframe width="640" height="360" src="" title="Vídeo de Raiva" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p></p> <!-- Parágrafo para exibir dicas -->
+</div>
+
+<!-- Emoção: Tristeza -->
+<div id="Tristeza-message" class="emotion-message hidden video-container">
+    <button class="close-button" onclick="closeVideo('Tristeza-message')">X</button>
+    <iframe width="640" height="360" src="" title="Vídeo de Tristeza" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p></p> <!-- Parágrafo para exibir dicas -->
+</div>
+
+<!-- Emoção: Medo -->
+<div id="Medo-message" class="emotion-message hidden video-container">
+    <button class="close-button" onclick="closeVideo('Medo-message')">X</button>
+    <iframe width="640" height="360" src="" title="Vídeo de Medo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p></p> <!-- Parágrafo para exibir dicas -->
+</div>
+
+<!-- Emoção: Ansiedade -->
+<div id="Ansiedade-message" class="emotion-message hidden video-container">
+    <button class="close-button" onclick="closeVideo('Ansiedade-message')">X</button>
+    <iframe width="640" height="360" src="" title="Vídeo de Ansiedade" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p></p> <!-- Parágrafo para exibir dicas -->
+</div>
+
+<!-- Emoção: Apatia -->
+<div id="Apatia-message" class="emotion-message hidden video-container">
+    <button class="close-button" onclick="closeVideo('Apatia-message')">X</button>
+    <iframe width="640" height="360" src="" title="Vídeo de Apatia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p></p> <!-- Parágrafo para exibir dicas -->
+</div>
+
+
+<script>
+    function limparFormulario() {
+        // Limpar campos do formulário
+        var inputs = document.querySelectorAll('#emotions-form input[type="number"]');
+        inputs.forEach(input => (input.value = ''));
+
+        // Ocultar recados e remover classes
+        var emotionMessages = document.querySelectorAll('.emotion-message');
+        emotionMessages.forEach(message => {
+            message.classList.add('hidden');
+            message.classList.remove('video-container', 'negative', 'neutral', 'positive');
+        });
+
+        // Ocultar div de resultado
+        var resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'none';
+    }
+
+
+
+document.getElementById("emotions-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var emotionsForm = document.getElementById("emotions-form");
+    var emotions = {
+        "Tristeza": parseInt(emotionsForm.tristeza.value),
+        "Raiva": parseInt(emotionsForm.raiva.value),
+        "Medo": parseInt(emotionsForm.medo.value),
+        "Ansiedade": parseInt(emotionsForm.ansiedade.value),
+        "Apatia": parseInt(emotionsForm.apatia.value)
+    };
+    var resultDiv = document.getElementById("result");
+
+    function showMessage(emotion, intensity) {
+        var emotionMessage = document.getElementById(emotion + "-message");
+        emotionMessage.classList.remove("hidden");
+
+        if (intensity === 3) {
+            emotionMessage.querySelector("p").innerText = "Aqui está um vídeo para lidar com " + emotion + ".";
+            emotionMessage.className = "emotion-message video-container negative";
+            var videoIframe = emotionMessage.querySelector("iframe");
+
+            if (emotion === "Tristeza") {
+                videoIframe.src = "https://www.youtube.com/embed/3yQ--vF_GyY";
+            } else if (emotion === "Raiva") {
+                videoIframe.src = "https://www.youtube.com/embed/2FCPl7eNPGo";
+            } else if (emotion === "Medo") {
+                videoIframe.src = "https://www.youtube.com/embed/P3YulbpVWKU";
+            } else if (emotion === "Ansiedade") {
+                videoIframe.src = "https://www.youtube.com/embed/b4UsvCSPGHQ";
+            } else if (emotion === "Apatia") {
+                videoIframe.src = "https://www.youtube.com/embed/crTPYrJrMOE";
+            }
+        } else if (intensity === 2) {
+            var messageParagraph = emotionMessage.querySelector("p");
+            messageParagraph.innerText = "Aqui estão algumas dicas para evitar que " + emotion + " aumente, alcançando o nível 3: " + getDicas(emotion);
+            emotionMessage.className = "emotion-message neutral";
+        } else {
+            emotionMessage.querySelector("p").innerText = "Que bom! Parece que o nível de " + emotion + " é baixo! Continue mantendo-o assim, fazendo coisas que te deixam bem. Se precisar desabafar, temos aqui uma aba de diário privado.";
+            emotionMessage.className = "emotion-message positive";
+        }
+    }
+
+    function hideMessages() {
+        for (var emotion in emotions) {
+            var emotionMessage = document.getElementById(emotion + "-message");
+            emotionMessage.classList.add("hidden");
+
+            var videoIframe = emotionMessage.querySelector("iframe");
+            if (videoIframe) {
+                videoIframe.src = "";
+            }
+        }
+    }
+
+    hideMessages();
+
+    for (var emotion in emotions) {
+        if (emotions[emotion] > 0) {
+            showMessage(emotion, emotions[emotion]);
+        }
+    }
+
+    if (Object.values(emotions).some(emotion => emotion === 3)) {
+        resultDiv.style.display = "block";
+        resultDiv.classList.add("negative");
+    } else {
+        resultDiv.style.display = "none";
+        resultDiv.classList.remove("negative");
+    }
+});
+
+function getDicas(emotion) {
+    var dicas = {
+        
+        "Tristeza": "\n\n1. Identifique e Aceite Sentimentos: Reconheça e aceite seus sentimentos de tristeza. Permita-se sentir,\n sem julgamento. \n\n2. Pratique a Gratidão: Concentre-se em aspectos positivos da sua vida. Regularmente \nreflita sobre coisas pelas quais você é grato. \n\n3. Atividade Física: Exercícios liberam endorfinas, substâncias químicas \nque melhoram o humor. Mesmo uma curta caminhada pode fazer diferença.\n\n4. Pratique o Autocuidado: Cuide de si mesmo física e emocionalmente. Tire um \ntempo para relaxar e fazer coisas que o fazem se sentir bem.\n\n5.  Evite Isolamento: A tendência de se isolar pode aumentar a tristeza. Mantenha\n conexões sociais, mesmo que virtuais. \n\n6. Estabeleça Metas Pequenas: Defina metas realistas para evitar se sentir sobrecarregado. Celebre \nas conquistas, mesmo as pequenas.",
+       
+        "Raiva": "\n\n1. Reconheça a raiva: Esteja ciente de quando você está começando a sentir raiva. O autoconhecimento\n é o primeiro passo para gerenciar suas emoções. \n\n2. Pratique a respiração profunda: Quando sentir que a raiva está surgindo, faça respirações profundas e lentas. Isso\n pode ajudar a acalmar o sistema nervoso e reduzir a intensidade da emoção. \n\n 3.Dê um tempo: Se possível, afaste-se da situação que está causando a raiva. Isso pode proporcionar um \nespaço para reflexão e evitar reações impulsivas.\n\n 4. Expresse-se de maneira assertiva: Ao invés de explodir em raiva, tente comunicar seus sentimentos de maneira \nclara e respeitosa.\n\n5. Encontre formas saudáveis de liberar a raiva: Praticar exercícios físicos, escrever em um diário,\n ou praticar técnicas de relaxamento são maneiras eficazes de liberar a raiva de maneira construtiva.\n\n6. Desenvolva empatia: Tente entender a perspectiva dos outros e considere que nem sempre as ações \nsão direcionadas pessoalmente contra você. Isso pode ajudar a reduzir a intensidade da raiva. \n\n7. Procure ajuda profissional: Se a raiva é um problema persistente e interfere em sua qualidade de vida, \nconsiderar a ajuda de um profissional de saúde mental pode ser benéfico.",
+       
+        "Medo": "\n\n1. Respire fundo: Parece simples, mas respirar profundamente pode ajudar a acalmar o sistema nervoso\n e reduzir a ansiedade.\n\n2. Divida o medo em partes: Às vezes, o medo pode parecer avassalador. Tente quebrá-lo em partes \nmenores e mais gerenciáveis. Lidar com uma coisa de cada vez pode ser menos assustador.\n\n3. Visualize o sucesso: Imagine a situação temida terminando da melhor maneira possível. \nIsso pode ajudar a reprogramar sua mente para ver as coisas de maneira mais positiva.\n\n4. Fale sobre isso: Compartilhe seus medos com amigos, familiares ou profissionais. Às vezes, apenas \nfalar sobre o que está te assustando pode ser um alívio.\n\n5. Aprenda sobre o que te assusta: Às vezes, entender melhor o que causa medo pode ajudar a enfrentá-lo. \nConhecimento é poder, certo?",
+       
+        "Ansiedade": "\n\n1. Respiração profunda: Pratique técnicas de respiração profunda para acalmar o sistema nervoso. Inspire\n lentamente pelo nariz, segure a respiração por alguns segundos e expire lentamente pela  boca. \n\n2. Exercício regular: A atividade física libera endorfinas, que podem melhorar\n o humor e reduzir a ansiedade. Tente incorporar exercícios regulares na sua rotina. \n\n3. Limitação da cafeína e açúcar: Reduza o consumo de cafeína e açúcar, pois eles podem contribuir \npara o aumento da ansiedade. Opte por opções mais saudáveis, como chás de ervas e alimentos \nde liberação lenta de energia. \n\n4. Durma o suficiente: Garanta uma boa qualidade de sono, pois a privação do sono\n pode intensificar a ansiedade. \n\n5. Converse com alguém: Compartilhe seus sentimentos com amigos, familiares ou um profissional \nde saúde mental. O apoio social pode ser crucial. \n\n6. Aprenda a dizer não: Não sobrecarregue sua agenda. Estabeleça limites saudáveis e aprenda \na dizer não quando necessário.",
+       
+        "Apatia": "\n\n 1. Identifique a causa: Descubra por que você está se sentindo apático. Pode ser devido ao \nestresse, tédio, ou outras questões emocionais. Compreender a causa pode ajudar na abordagem correta. \n\n 2. Estabeleça metas pequenas: Defina metas realistas e alcançáveis. Isso pode ajudar a criar \num senso de propósito e realização, combatendo a apatia. \n\n3. Mantenha uma rotina: Ter uma rotina estruturada pode fornecer estabilidade\n e minimizar sentimentos de vazio. Isso inclui horários regulares para alimentação, sono e \natividade física. \n\n4. Tente coisas novas: A monotonia pode contribuir para a apatia. Experimente \natividades novas e desafiadoras para trazer um senso renovado de interesse.\n\n5.  Socialize: Interaja com amigos, familiares ou colegas. O apoio social pode ser fundamental \npara superar a apatia, oferecendo conexões significativas. \n\n6. Pratique o autocuidado: Cuide de si mesmo física e emocionalmente. Isso inclui uma alimentação \nsaudável, exercícios regulares e tempo para relaxamento. \n\n7. Limitação do consumo de mídia social: O uso excessivo de mídia social pode contribuir para sentimentos de\n desconexão. Considere limitar o tempo gasto nas redes sociais. \n\n8. Estabeleça prioridades: Concentre-se em tarefas importantes e significativas. Defina prioridades \npara evitar sentir-se sobrecarregado. \n\n9. Busque ajuda profissional: Se a apatia persistir e afetar significativamente sua vida, considerar a ajuda \nde um profissional de saúde mental pode ser benéfico."
+    };
+
+    return dicas[emotion];
+}
+
+
+// Função para fechar o container de vídeo
+function closeVideo(emotion) {
+    var emotionMessage = document.getElementById(emotion);
+    emotionMessage.classList.add("hidden");
+}
+
+
+
+</script>
+
+
+
+
+
+<script>
+    // Função para fechar o container de vídeo
+    function closeVideo(emotion) {
+        var emotionMessage = document.getElementById(emotion);
+        emotionMessage.classList.add("hidden");
+    }
+</script>
+
+<script>
+    // Selecione o botão e a tela de destino pelo ID
+    var meuBotao = document.getElementById('meuBotao');
+    var telaDestino = document.getElementById('telaDestino');
+  
+    // Adicione um evento de clique ao botão
+    meuBotao.addEventListener('click', function() {
+   
+        window.location.href = 'http://localhost/tcc%20-%20Copia/tela_ondebuscar.html';
+    });
+  </script>
+
+<script>
+// Selecione o botão e a tela de destino pelo ID
+var meuBotao1 = document.getElementById('meuBotao1');
+var telaDestino = document.getElementById('telaDestino');
+
+// Adicione um evento de clique ao botão
+meuBotao1.addEventListener('click', function() {
+
+    window.location.href = 'http://localhost/tcc%20-%20Copia/tela_relatos.html';
+});
+</script>
+
+<script>
+// Selecione o botão e a tela de destino pelo ID
+var meuBotao2 = document.getElementById('meuBotao2');
+var telaDestino = document.getElementById('telaDestino');
+
+// Adicione um evento de clique ao botão
+meuBotao2.addEventListener('click', function() {
+  
+    window.location.href = 'http://localhost/tcc%20-%20Copia/tela_nivelemocoes.html';
+});
+</script>
+
+<script>
+// Selecione o botão e a tela de destino pelo ID
+var meuBotao3 = document.getElementById('meuBotao3');
+var telaDestino = document.getElementById('telaDestino');
+
+// Adicione um evento de clique ao botão
+meuBotao3.addEventListener('click', function() {
+
+    window.location.href = 'http://localhost/tcc%20-%20Copia/tela_diarioprivado.php';
+});
+</script>
+
+<script>
+// Selecione o botão e a tela de destino pelo ID
+var meuBotao4 = document.getElementById('meuBotao4');
+var telaDestino = document.getElementById('telaDestino');
+
+// Adicione um evento de clique ao botão
+meuBotao4.addEventListener('click', function() {
+    
+    window.location.href = 'http://localhost/tcc%20-%20Copia/tela_perfil.php';
+});
+</script>
+
+
+    <footer>
+        <p>&copy; 2023 Mindful Harmony</p>
+    </footer>
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

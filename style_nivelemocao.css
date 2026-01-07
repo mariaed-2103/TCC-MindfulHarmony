@@ -1,0 +1,323 @@
+     
+  
+   :root {
+    /* COLORS */
+    --bege: #466044;
+    --lightbege: #95cf81;
+    }
+  
+    body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #cfeda7;
+  }
+  
+  header {
+    background-color: var(--bege);
+    background-image: linear-gradient(
+      90deg,
+      var(--bege) 20%,
+      var(--lightbege) 90%
+    );
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between; /* Alinhe os elementos à esquerda e à direita */
+    align-items: center; /* Alinhe verticalmente ao centro */
+  }
+  
+  /* Estilize a imagem no cabeçalho */
+  .header-image {
+    margin-right: 20px; /* Espaçamento à direita da logo */
+  }
+  
+   /* Estilize o container dos botões e do dropdown */
+   .button-container {
+    display: flex; /* Use flexbox para alinhar elementos em linha */
+    justify-content: flex-end; /* Alinhe à direita */
+    align-items: center; /* Alinhe verticalmente ao centro */
+  }
+  
+  /* Estilize os botões */
+  .custom-button {
+    background-color:  #d59c5f;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 10px; /* Espaçamento entre os botões */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave de cores */
+  }
+  
+  .custom-button:hover {
+    background-color: #cd853f; /* Cor de fundo alterada no hover */
+    color: #ffffff; /* Cor do texto alterada no hover */
+  }
+  
+  /* Estilize o dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .dropdown-button {
+    background-color: #d59c5f;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 10px; /* Espaçamento entre os botões */
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #deb887;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%; 
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 20px;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #e7af77;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  } 
+  
+  
+  form {
+              margin: 20px auto;
+              width: 260px;
+              border: 2px solid #6aa067;
+              padding: 20px;
+              border-radius: 8px;
+              background-color: #FCFFE0;
+              position: center;
+              margin-top: 3%;
+              text-align: center; /* Centralize o texto dentro do formulário */
+          }
+  
+          .emotion {
+              margin: 10px 0;
+              text-align: center;
+          }
+  
+          label {
+              display: inline-block;
+              width: 100px;
+              text-align: center;
+          }
+  
+          input[type="number"] {
+              width: 30px;
+              text-align: center;
+          }
+  
+          .formbutton {
+              display: block;
+              margin: 20px auto;
+              margin-top: 35px;
+              padding: 15px 25px;
+              background-color: #466044;
+              color: #fff;
+              border: none;
+              border-radius: 25px;
+              cursor: pointer;
+              font-family: 'Poppins', sans-serif;
+              font-size: 17px;
+             
+          }
+  
+          #result {
+              margin: 20px auto;
+              padding: 10px;
+              width: 300px;
+              border-radius: 5px;
+              display: none;
+          }
+  
+          .hidden {
+              display: none;
+          }
+  
+       
+          .negative {
+              background-color: #FF5733;
+              color: #fff;
+          }
+  
+  
+  
+          /* Estilize o container das mensagens de nível 2 (neutral) */
+  .neutral {
+      background-color: #e7d677;
+      color: #333;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      display: inline-block; /* Alterado para inline-block */
+      max-width: 100%; /* Garante que não ultrapasse a largura máxima */
+      box-sizing: border-box;
+      margin-left: 20%;
+  }
+  
+  /* Estilize o container das mensagens de nível 1 (positive) */
+  .positive {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      display: inline-block; /* Alterado para inline-block */
+      max-width: 100%; /* Garante que não ultrapasse a largura máxima */
+      box-sizing: border-box;
+      margin-left: 20%;
+      margin-right: 20%;
+  }
+  
+  /* Ajuste para garantir que o container se expanda conforme o conteúdo interno */
+  .neutral p,
+  .positive p {
+      margin: 0; /* Remova as margens do parágrafo interno */
+  }
+  
+  /* Remova o iframe do container de mensagens */
+  .neutral iframe,
+  .positive iframe {
+      display: none; /* Esconda o iframe */
+  }
+  
+  
+  
+  
+  
+  
+          .blue {
+              background-color: #3498db;
+              color: #fff;
+          }
+  
+  
+          .orange {
+              background-color: #F39C12 ;
+              color: #fff;
+          }
+  
+          .purple-light {
+      background-color: #8a2be2;
+      color: #ffffff; 
+      padding: 10px;
+      border-radius: 5px;
+  }
+  
+  
+          footer {
+          text-align: center;
+          padding: 7px;
+          background-color: #8a9c84;
+          color:white;
+          font-family: Poppins, sans-serif;
+          font-size: 16px;
+         padding: 20px;
+          }
+  
+  footer img {
+    width: 40px; 
+    margin: -5px; 
+    height: 20px;
+    margin-left: 5px;
+    
+  }
+  
+  .fixed-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      background-color: #8a9c84;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+  }
+  
+  
+  /* Responsividade */
+  @media screen and (max-width: 768px) {
+      header {
+          padding: 10px 0;
+      }
+  
+      header h1 {
+          font-size: 24px;
+      }
+  }
+  
+  
+  .image1 {
+          
+          width: 45%;
+          margin-left: 25%;
+          margin-top: 2%;
+          height: auto;
+          
+      }
+  
+      .text {
+              flex: 1; /* Permite que o texto ocupe o espaço restante */
+              margin-left: 10%;
+              margin-right: 10%;
+              text-align: center; 
+              font-size: 115%; 
+          }
+          
+  
+          .video-container {
+              position: relative;
+              top: 50%;
+              margin-left: 26%;
+               margin-right: 29%;
+               margin-bottom: 3%;
+              background-color: #fff;
+              border: 1px solid #ccc;
+              padding: 20px;
+              z-index: 1000;
+              border-radius: 20px;
+          }
+  
+          /* Estilize o botão de fechar */
+          .close-button {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              background-color: rgb(254, 241, 146);
+              border: none;
+              border-radius: 50%;
+              padding: 5px 10px;
+              cursor: pointer;
+          }
+  

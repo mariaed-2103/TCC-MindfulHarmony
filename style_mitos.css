@@ -1,0 +1,241 @@
+    /* Seu código CSS aqui... */
+
+               /* Seu código CSS aqui... */
+            /* Reset de estilos */
+            :root {
+                /* COLORS */
+                --bege: #466044;
+                --lightbege: #95cf81;
+              }
+            
+              body, h1, h2, p {
+              margin: 0;
+              padding: 0;
+            }
+            
+            body {
+              font-family: 'Poppins', sans-serif;
+              background-color: #cfeda7;
+            }
+            
+            header {
+              background-color: var(--bege);
+                background-image: linear-gradient(
+                    90deg,
+                    var(--bege) 20%,
+                    var(--lightbege) 90%
+                );
+              color: white;
+              text-align: center;
+              padding: 20px 0;
+              display: flex;
+              justify-content: space-between; /* Alinhe os elementos à esquerda e à direita */
+              align-items: center; /* Alinhe verticalmente ao centro */
+            }
+            
+            /* Estilize a imagem no cabeçalho */
+            .header-image {
+              margin-right: 20px; /* Espaçamento à direita da logo */
+            }
+            
+             /* Estilize o container dos botões e do dropdown */
+             .button-container {
+              display: flex; /* Use flexbox para alinhar elementos em linha */
+              justify-content: flex-end; /* Alinhe à direita */
+              align-items: center; /* Alinhe verticalmente ao centro */
+            }
+            
+            /* Estilize os botões */
+            .custom-button {
+              background-color:  #d59c5f;
+              color: #ffffff;
+              font-family: 'Poppins', sans-serif;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 20px;
+              cursor: pointer;
+              margin-right: 10px; /* Espaçamento entre os botões */
+              transition: background-color 0.3s, color 0.3s; /* Transição suave de cores */
+            }
+            
+            .custom-button:hover {
+              background-color: #cd853f; /* Cor de fundo alterada no hover */
+              color: #ffffff; /* Cor do texto alterada no hover */
+            }
+            
+            /* Estilize o dropdown */
+            .dropdown {
+              position: relative;
+              display: inline-block;
+              margin-right: 20px;
+            }
+            
+            .dropdown-button {
+              background-color: #d59c5f;
+              color: #ffffff;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 20px;
+              cursor: pointer;
+              font-family: 'Poppins', sans-serif;
+              margin-right: 10px; /* Espaçamento entre os botões */
+            }
+            
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #deb887;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+              top: 100%; 
+              font-family: 'Poppins', sans-serif;
+              border-radius: 20px;
+            }
+            
+            .dropdown-content a {
+              color: #333;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+              border-radius: 20px;
+            }
+            
+            .dropdown-content a:hover {
+              background-color: #e7af77;
+            }
+            
+            .dropdown:hover .dropdown-content {
+              display: block;
+            } 
+            
+            footer {
+              text-align: center;
+              padding: 20px;
+              background-color: #8a9c84;
+              color:white;
+              font-family: 'Poppins', sans-serif;
+              font-size: 16px;
+            }
+            
+            footer img {
+              width: 100px; /* Ajuste o tamanho conforme necessário */
+              margin: 2px; /* Adicione margens conforme necessário */
+            }
+            
+            .image1 {
+                    
+                    width: 50%;
+                    margin-left: 1%;
+                    margin-top: 2%;
+                    height: auto;
+                    
+                }
+            
+                .image2 {
+                    
+                    width: 15%;
+                    margin-left: 3%;
+                    margin-top: 5%;
+                    height: auto;
+                    
+                }
+                .text {
+                        flex: 1; /* Permite que o texto ocupe o espaço restante */
+                        margin-left: 20%;
+                        margin-right: 20%;
+                        margin-top: 2%;
+                        text-align: center; 
+                        font-size: 115%; 
+                    }
+            
+            
+            /* Responsividade */
+            @media screen and (max-width: 768px) {
+                header {
+                    padding: 10px 0;
+                }
+            
+                header h1 {
+                    font-size: 24px;
+                }
+            
+              
+            
+            }
+            
+            body {
+                        font-family: Poppins, sans-serif;
+                        text-align: center;
+                        margin: 0;
+                    }
+            
+                    
+                    #game-container {
+                margin: 50px auto;
+                margin-top: 3%;
+                padding: 20px;
+                border: 2px solid #333;
+                border-radius: 10px;
+                width: 400px;
+                z-index: 1;
+                border-color: #4f924a;
+                transition: margin-top 0.5s;
+                position: relative; /* Adicione esta linha */
+            }
+            
+            
+            #fireworksGif {
+                width: 35%;
+                display: none;
+                margin-left: 30%;
+            }
+            
+                
+            #fireworks-container {
+                text-align: center; /* Centralize o conteúdo */
+            }
+            
+            
+               
+            
+                    h1 {
+                        font-size: 24px;
+                    }
+            
+                    #question {
+                        font-size: 18px;
+                        margin: 20px 0;
+                    }
+            
+                    
+                    li.answer {
+                        list-style-type: none;
+                        background-color: #4CAF50;
+                        color: white;
+                        padding: 10px;
+                        margin: 5px;
+                        cursor: pointer;
+                        border-radius: 10px;
+                    }
+            
+                    li.answer:hover {
+                        background-color: #45a049;
+                    }
+            
+                    #answers-container {
+                display: none; /* Oculta o contêiner de respostas inicialmente*/
+            }
+            
+            /*.arrow {
+                position: absolute;
+                left: 20%; /* Ajuste a posição horizontal da seta conforme necessário 
+                top: 50%; /* Ajuste a posição vertical da seta conforme necessário 
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent; /* Tamanho da seta à esquerda 
+                border-right: 10px solid transparent; /* Tamanho da seta à direita 
+                border-bottom: 15px solid #3b4a29; /* Cor de fundo da seta, correspondendo à cor de fundo do parágrafo de texto 
+                transform: translateX(-50%) translateY(-50%); /* Centraliza a seta verticalmente 
+            }
+            */

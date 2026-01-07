@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Meu Site de Apresentação</title>
+    <style>
+        /* Reset de estilos */
+        :root {
+	/* COLORS */
+	--bege: #466044;
+	--lightbege: #95cf81;
+  }
+
+  body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #cfeda7;
+}
+
+.profile-content {
+    background-color: #fff;
+    padding: 10px; /* Diminui o preenchimento interno */
+    border: 1px solid #ccc;
+    border-radius: 0; /* Bordas retangulares */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 700px; /* Define a largura máxima do retângulo */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.profile-content {
+    background-color: #466044;
+    padding: 30px;
+    border: 7px solid #d59c5f;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-content img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+h1 {
+    font-size: 45px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color:#d7ab7b
+}
+
+form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #d59c5f;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    border: 1px solid  #466044;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 5px;
+    background-color:  #cfeda7;
+}
+
+input[type="submit"] {
+    background-color: #d59c5f;
+    color: #466044;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type="submit"]:hover {
+    background-color:  #e7af77;
+}
+
+.user-icon {
+    width: 80px; /* Ajuste o tamanho conforme desejado */
+    height: 80px; /* Ajuste o tamanho conforme desejado */
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.user-section {
+    text-align: center;
+}
+
+.imguser-icon {
+    width: 80px; /* Ajuste o tamanho conforme desejado */
+    height: 80px; /* Ajuste o tamanho conforme desejado */
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.change-photo-button {
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+
+}
+
+header {
+  background-color: var(--bege);
+	background-image: linear-gradient(
+		90deg,
+		var(--bege) 20%,
+		var(--lightbege) 90%
+	);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between; /* Alinhe os elementos à esquerda e à direita */
+  align-items: center; /* Alinhe verticalmente ao centro */
+}
+
+/* Estilize a imagem no cabeçalho */
+.header-image {
+  margin-right: 20px; /* Espaçamento à direita da logo */
+}
+
+ /* Estilize o container dos botões e do dropdown */
+ .button-container {
+  display: flex; /* Use flexbox para alinhar elementos em linha */
+  justify-content: flex-end; /* Alinhe à direita */
+  align-items: center; /* Alinhe verticalmente ao centro */
+}
+
+/* Estilize os botões */
+.custom-button {
+  background-color:  #d59c5f;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-right: 10px; /* Espaçamento entre os botões */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave de cores */
+}
+
+.custom-button:hover {
+  background-color: #cd853f; /* Cor de fundo alterada no hover */
+  color: #ffffff; /* Cor do texto alterada no hover */
+}
+
+/* Estilize o dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.dropdown-button {
+  background-color: #d59c5f;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 10px; /* Espaçamento entre os botões */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #deb887;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%; 
+  font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #e7af77;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #8a9c84;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+footer img {
+  width: 100px; /* Ajuste o tamanho conforme necessário */
+  margin: 2px; /* Adicione margens conforme necessário */
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 0;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="header-image">
+          <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1693999023/Novo_Projeto_oqfozm.png" alt="Sua Imagem">
+      </div>
+    
+      <div class="button-container">
+        <div class="dropdown">
+            <button class="dropdown-button">Saúde Mental</button>
+            <div class="dropdown-content">
+                <a href="#">Apresentação</a>
+                <a href="#">O que é saúde mental?</a>
+                <a href="#">Mitos e fatos</a>
+                <a href="#">Emoções</a>
+                <a href="#">Prevenção ao suicídio</a>
+            </div>
+          </div>
+            <div class="dropdown">
+              <button class="dropdown-button">Rede de Apoio</button>
+              <div class="dropdown-content">
+                  <a href="#">Onde buscar ajuda</a>
+                  <a href="#">Quem somos</a>
+                  <a href="#">Fale conosco</a>
+              </div>
+    
+        </div>
+        <button class="custom-button">Relatos/Depoimentos</button>
+        <button class="custom-button">Relatórios</button>
+        <button class="custom-button">Diário Privado</button>
+        <button class="custom-button">Perfil</button>
+    </div>
+      </header> <br>
+
+      <div class="profile-container">
+        <div class="profile-content">
+          <h1>Perfil do Usuário</h1>
+            <div class="user-section">
+                <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1696367238/usuario_b2uwe1.png" alt="User Icon" class="imguser-icon">
+                <input type="submit" value="Alterar Foto" class="change-photo-button">
+            </div> <br>
+
+            <form action="/atualizar_perfil" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <br>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+                <br>
+
+                <label for="senha">Nova Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <br>
+
+                <label for="confirmar_senha">Repita a Senha:</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+                <br>
+
+                <input type="submit" value="Salvar Alterações">
+            </form>
+        </div>
+    </div> <br>
+
+    <footer>
+        <p>&copy; 2023 Meu Site de Apresentação</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+                /* Reset de estilos */
+                :root {
+	/* COLORS */
+	--bege: #466044;
+	--lightbege: #95cf81;
+  }
+
+  body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #cfeda7;
+}
+
+header {
+  background-color: var(--bege);
+	background-image: linear-gradient(
+		90deg,
+		var(--bege) 20%,
+		var(--lightbege) 90%
+	);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between; /* Alinhe os elementos à esquerda e à direita */
+  align-items: center; /* Alinhe verticalmente ao centro */
+}
+
+/* Estilize a imagem no cabeçalho */
+.header-image {
+  margin-right: 20px; /* Espaçamento à direita da logo */
+}
+
+ /* Estilize o container dos botões e do dropdown */
+ .button-container {
+  display: flex; /* Use flexbox para alinhar elementos em linha */
+  justify-content: flex-end; /* Alinhe à direita */
+  align-items: center; /* Alinhe verticalmente ao centro */
+}
+
+/* Estilize os botões */
+.custom-button {
+  background-color:  #d59c5f;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-right: 10px; /* Espaçamento entre os botões */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave de cores */
+}
+
+.custom-button:hover {
+  background-color: #cd853f; /* Cor de fundo alterada no hover */
+  color: #ffffff; /* Cor do texto alterada no hover */
+}
+
+/* Estilize o dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.dropdown-button {
+  background-color: #d59c5f;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 10px; /* Espaçamento entre os botões */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #deb887;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%; 
+  font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #e7af77;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #8a9c84;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+footer img {
+  width: 100px; /* Ajuste o tamanho conforme necessário */
+  margin: 2px; /* Adicione margens conforme necessário */
+}
+        .container {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .container:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .image {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .text {
+            flex: 1;
+            padding: 20px;
+            text-align: justify;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        img {
+            width: 200px; /* Exemplo de largura */
+            height: auto; /* Isso mantém a proporção original da imagem */
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="header-image">
+          <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1693999023/Novo_Projeto_oqfozm.png" alt="Sua Imagem">
+      </div>
+    
+      <div class="button-container">
+        <div class="dropdown">
+            <button class="dropdown-button">Saúde Mental</button>
+            <div class="dropdown-content">
+                <a href="#">Apresentação</a>
+                <a href="#">O que é saúde mental?</a>
+                <a href="#">Mitos e fatos</a>
+                <a href="#">Emoções</a>
+                <a href="#">Prevenção ao suicídio</a>
+            </div>
+          </div>
+            <div class="dropdown">
+              <button class="dropdown-button">Rede de Apoio</button>
+              <div class="dropdown-content">
+                  <a href="#">Onde buscar ajuda</a>
+                  <a href="#">Quem somos</a>
+                  <a href="#">Fale conosco</a>
+              </div>
+    
+        </div>
+        <button class="custom-button">Relatos/Depoimentos</button>
+        <button class="custom-button">Relatórios</button>
+        <button class="custom-button">Diário Privado</button>
+        <button class="custom-button">Perfil</button>
+    </div>
+      </header> 
+
+    <div class="container">
+      <div class="image">
+          <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1695420465/7686388-removebg-preview_1_fob2jh.png" alt="Imagem 1">
+      </div>
+      <div class="text">
+          <p>Na era agitada em que vivemos, nunca foi tão importante cuidar da nossa saúde mental. 
+            No Mindful Harmony, entendemos as complexidades e desafios que todos enfrentamos em 
+            nossas vidas, e estamos aqui para oferecer uma mão amiga e um ouvido atento quando você 
+            mais precisa. Nosso site é dedicado a fornecer recursos, apoio e informações essenciais 
+            para ajudar a gerenciar crises de saúde mental e promover o bem-estar emocional.</p>
+      </div>
+  </div>
+
+  <div class="container">
+      <div class="image">
+          <img src="imagem2.jpg" alt="Imagem 2">
+      </div>
+      <div class="text">
+          <p>Texto do container 2</p>
+      </div>
+  </div>
+
+  <div class="container">
+      <div class="image">
+          <img src="imagem3.jpg" alt="Imagem 3">
+      </div>
+      <div class="text">
+          <p>Texto do container 3</p>
+      </div>
+  </div>
+    <footer>
+        <p>&copy; 2023 Meu Site de Apresentação</p>
+    </footer>
+</body>
+</html>

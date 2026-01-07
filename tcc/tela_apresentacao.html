@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Apresentação</title>
+    <style>
+
+:root {
+	/* COLORS */
+	--bege: #466044;
+	--lightbege: #95cf81;
+  }
+
+        body {
+            font-family: Poppins, sans-serif;
+            background-color: #deb887;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+  background-color: var(--bege);
+	background-image: linear-gradient(
+		90deg,
+		var(--bege) 20%,
+		var(--lightbege) 90%
+	);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between; /* Alinhe os elementos à esquerda e à direita */
+  align-items: center; /* Alinhe verticalmente ao centro */
+}
+
+/* Estilize a imagem no cabeçalho */
+.header-image {
+  margin-right: 20px; /* Espaçamento à direita da logo */
+}
+
+ /* Estilize o container dos botões e do dropdown */
+ .button-container {
+  display: flex; /* Use flexbox para alinhar elementos em linha */
+  justify-content: flex-end; /* Alinhe à direita */
+  align-items: center; /* Alinhe verticalmente ao centro */
+}
+
+/* Estilize os botões */
+.custom-button {
+  background-color:  #d59c5f;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-right: 10px; /* Espaçamento entre os botões */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave de cores */
+}
+
+.custom-button:hover {
+  background-color: #cd853f; /* Cor de fundo alterada no hover */
+  color: #ffffff; /* Cor do texto alterada no hover */
+}
+
+/* Estilize o dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.dropdown-button {
+  background-color: #d59c5f;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 10px; /* Espaçamento entre os botões */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #deb887;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%; 
+  font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #e7af77;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #8a9c84;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+footer img {
+  width: 100px; /* Ajuste o tamanho conforme necessário */
+  margin: 2px; /* Adicione margens conforme necessário */
+}
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 32px;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .section {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #888;
+        }
+        /* rodape */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #8a9c84;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-image">
+          <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1693999023/Novo_Projeto_oqfozm.png" alt="Sua Imagem">
+      </div>
+    
+      <div class="button-container">
+        <div class="dropdown">
+            <button class="dropdown-button">Saúde Mental</button>
+            <div class="dropdown-content">
+                <a href="#">Apresentação</a>
+                <a href="#">O que é saúde mental?</a>
+                <a href="#">Mitos e fatos</a>
+                <a href="#">Emoções</a>
+                <a href="#">Prevenção ao suicídio</a>
+            </div>
+          </div>
+            <div class="dropdown">
+              <button class="dropdown-button">Rede de Apoio</button>
+              <div class="dropdown-content">
+                  <a href="#">Onde buscar ajuda</a>
+                  <a href="#">Quem somos</a>
+                  <a href="#">Fale conosco</a>
+              </div>
+    
+        </div>
+        <button class="custom-button">Relatos/Depoimentos</button>
+        <button class="custom-button">Relatórios</button>
+        <button class="custom-button">Diário Privado</button>
+        <button class="custom-button">Perfil</button>
+    </div>
+      </header> <br>
+
+    <div class="container">
+        <h1>Apresentação</h1>
+        <p>
+            Na era agitada em que vivemos, nunca foi tão importante cuidar da nossa saúde mental. No Mindful Harmony, entendemos as complexidades e desafios que todos enfrentamos em nossas vidas, e estamos aqui para oferecer uma mão amiga e um ouvido atento quando você mais precisa. Nosso site é dedicado a fornecer recursos, apoio e informações essenciais para ajudar a gerenciar crises de saúde mental e promover o bem-estar emocional.
+        </p>
+        <div class="section">
+            <h2>O que é o Mindful Harmony?</h2>
+            <p>
+                O Mindful Harmony é muito mais do que apenas um site; é uma comunidade acolhedora e compassiva que se esforça para criar um espaço onde todos possam encontrar conforto e orientação em tempos de crise. Nossa missão é promover a conscientização sobre a saúde mental, eliminar o estigma associado a ela e fornecer recursos práticos para ajudar a melhorar a qualidade de vida daqueles que visitam nosso site.
+            </p>
+        </div>
+        <div class="section">
+            <h2>O que oferecemos:</h2>
+            <ul>
+                <li><span class="highlight">Informação e Educação:</span> Oferecemos artigos informativos e recursos educacionais sobre uma variedade de tópicos relacionados à saúde mental, desde transtornos comuns até estratégias de enfrentamento e autoajuda.</li>
+                <li><span class="highlight">Apoio Comunitário:</span> Nosso fórum é um espaço seguro e inclusivo onde você pode compartilhar suas experiências, fazer perguntas e se conectar com outras pessoas que podem estar passando por desafios semelhantes.</li>
+                <li><span class="highlight">Recursos de Emergência:</span> Disponibilizamos informações de contato para linhas de apoio e serviços de emergência que podem ser cruciais em momentos de crise.</li>
+                <li><span class="highlight">Técnicas de Bem-Estar:</span> Explore técnicas de relaxamento, meditação, mindfulness e exercícios de gerenciamento de estresse para ajudar a encontrar equilíbrio e paz interior.</li>
+                <li><span class="highlight">Histórias Inspiradoras:</span> Leia histórias de superação e resiliência compartilhadas por indivíduos que enfrentaram desafios de saúde mental e encontraram esperança e recuperação.</li>
+            </ul>
+        </div>
+        </div> <br>
+        <footer>
+            <p>&copy; 2023 Meu Site de Apresentação</p>
+        </footer>
+        </body>
+        </html>

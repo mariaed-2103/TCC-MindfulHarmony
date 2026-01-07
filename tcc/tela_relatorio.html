@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoções do Dia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .emotion-label {
+            font-weight: bold;
+        }
+
+        .emotion-checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .emotion-slider {
+            width: 100%;
+        }
+
+        .emotion-slider-container {
+            display: none;
+        }
+
+        button {
+            display: block;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Emoções do Dia</h2>
+        <div class="emotion-checkbox">
+            <label class="emotion-label" for="alegria">Alegria</label>
+            <input type="checkbox" id="alegria" name="emoção" value="alegria">
+            <div class="emotion-slider-container">
+                <input type="range" class="emotion-slider" id="slider-alegria" name="slider-alegria" min="0" max="100">
+            </div>
+        </div>
+        <div class="emotion-checkbox">
+            <label class="emotion-label" for="tristeza">Tristeza</label>
+            <input type="checkbox" id="tristeza" name="emoção" value="tristeza">
+            <div class="emotion-slider-container">
+                <input type="range" class="emotion-slider" id="slider-tristeza" name="slider-tristeza" min="0" max="100">
+            </div>
+        </div>
+        <div class="emotion-checkbox">
+            <label class="emotion-label" for="raiva">Raiva</label>
+            <input type="checkbox" id="raiva" name="emoção" value="raiva">
+            <div class="emotion-slider-container">
+                <input type="range" class="emotion-slider" id="slider-raiva" name="slider-raiva" min="0" max="100">
+            </div>
+        </div>
+        <button type="submit">Enviar</button>
+    </div>
+
+    <script>
+        // Adicione um evento de clique para cada caixa de seleção de emoção
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                const sliderContainer = this.parentElement.querySelector('.emotion-slider-container');
+                if (this.checked) {
+                    sliderContainer.style.display = 'block';
+                } else {
+                    sliderContainer.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

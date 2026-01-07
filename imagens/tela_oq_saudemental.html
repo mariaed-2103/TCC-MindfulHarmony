@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Meu Site de Apresentação</title>
+    <style>
+        /* Reset de estilos */
+        :root {
+	/* COLORS */
+	--bege: #466044;
+	--lightbege: #95cf81;
+  }
+
+  body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #cfeda7;
+}
+
+header {
+  background-color: var(--bege);
+	background-image: linear-gradient(
+		90deg,
+		var(--bege) 20%,
+		var(--lightbege) 90%
+	);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between; /* Alinhe os elementos à esquerda e à direita */
+  align-items: center; /* Alinhe verticalmente ao centro */
+}
+
+/* Estilize a imagem no cabeçalho */
+.header-image {
+  margin-right: 20px; /* Espaçamento à direita da logo */
+}
+
+ /* Estilize o container dos botões e do dropdown */
+ .button-container {
+  display: flex; /* Use flexbox para alinhar elementos em linha */
+  justify-content: flex-end; /* Alinhe à direita */
+  align-items: center; /* Alinhe verticalmente ao centro */
+}
+
+/* Estilize os botões */
+.custom-button {
+  background-color:  #d59c5f;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 10px; /* Espaçamento entre os botões */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave de cores */
+}
+
+.custom-button:hover {
+  background-color: #cd853f; /* Cor de fundo alterada no hover */
+  color: #ffffff; /* Cor do texto alterada no hover */
+}
+
+/* Estilize o dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.dropdown-button {
+  background-color: #d59c5f;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 10px; /* Espaçamento entre os botões */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #deb887;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%; 
+  font-family: 'Poppins', sans-serif;
+  border-radius: 20px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 20px;
+}
+
+.dropdown-content a:hover {
+  background-color: #e7af77;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #8a9c84;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-top: 150px;
+}
+
+
+.image1 {
+        
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 30%;
+        margin-bottom: -5%;
+        height: auto;
+        
+    }
+
+
+
+footer img {
+  width: 100px; /* Ajuste o tamanho conforme necessário */
+  margin: 2px; /* Adicione margens conforme necessário */
+}
+
+.text {
+            flex: 1; /* Permite que o texto ocupe o espaço restante */
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: center; 
+            font-size: 115%; 
+            margin-top: 2%;
+            margin-bottom: 4%;
+        }
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 0;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="header-image">
+          <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1693999023/Novo_Projeto_oqfozm.png" alt="Sua Imagem">
+      </div>
+    
+      <div class="button-container">
+        <div class="dropdown">
+            <button class="dropdown-button">Saúde Mental</button>
+            <div class="dropdown-content">
+                <a href="#">Apresentação/Quem Somos</a>
+                <a href="#">O que é saúde mental?</a>
+                <a href="#">Mitos e fatos</a>
+                <a href="#">Emoções</a>
+            </div>
+          </div>
+           
+        <button class="custom-button">Onde buscar ajuda?</button>
+        <button class="custom-button">Relatos/Depoimentos</button>
+        <button class="custom-button">Como você está hoje?</button>
+        <button class="custom-button">Diário Privado</button>
+        <button class="custom-button">Perfil</button>
+    </div>
+      </header>
+
+      <div class="container">
+        <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1698957354/img_saudemental_zgx6qi.png" alt="Imagem o que é" class="image">
+    </div>
+
+    <div>
+     
+      <p class="text">A definição de saúde mental é realmente complexa e multifacetada, pois envolve muitos fatores e perspectivas. Sua explicação é fundamental para compreendermos a importância do bem-estar emocional e psicológico.
+
+        É o equilíbrio entre a mente e as emoções que permite às pessoas lidar com os desafios diários e as incertezas da vida. Isso inclui a capacidade de gerenciar o estresse, manter relacionamentos saudáveis e ter resiliência diante de situações adversas.<br>
+        
+         <br>
+        
+        Em resumo, saúde mental é mais do que a ausência de doenças mentais; é o estado de equilíbrio emocional e psicológico que nos permite enfrentar as complexidades da vida moderna, e sua compreensão requer uma abordagem coletiva e inclusiva. Abaixo, um vídeo da nossa psicóloga Ana nos informando sobre o que é saúde mental.
+        
+        
+        
+        
+        
+        
+        </p>
+  </div>
+
+    <div style="position: relative;">
+        <iframe style="position: absolute; right: 30%; width: 640px; height: 360px;  margin-bottom: 5%;" src="https://www.youtube.com/embed/AgWrd_pyFGc?si=0X4ub2kxUg9NE10z" title="YouTube video player" frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> </iframe>
+    </div>
+
+
+    <div class="container">
+      <img src="imagens/frase.png" alt="Imagem 1" class="image1">
+  </div>
+
+
+    <footer>
+        <p>&copy; 2023 Meu Site de Apresentação</p>
+    </footer>
+</body>
+</html>

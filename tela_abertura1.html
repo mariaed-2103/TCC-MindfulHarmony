@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="styletela_abertura1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mooli&family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="header-image">
+            <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1693999023/Novo_Projeto_oqfozm.png" alt="Sua Imagem">
+        </div>
+        <div class="button-container">
+            <button id="meuBotao" class="botaologin">FAÇA SEU LOGIN!</button>
+            <button id="meuBotao2" class="botaocadastro">REALIZE SEU CADASTRO!</button>
+        </div>
+    </header>
+
+    <div class="image-container">
+        <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1695076382/imgtelainicial_3_dsehus.jpg" alt="Minha Imagem" class="header-image">
+    </div>
+
+
+
+
+
+    <div class="wrapper">
+        <div class="background">     <div class="container">
+            <img src="imagens/aqui.png" alt="Imagem 1" class="image1">
+            
+        </div>
+    </div>
+        <div class="item-bg"></div>
+        
+
+
+        <div class="news-slider">
+            <div class="news-slider__wrp swiper-wrapper">
+                
+
+
+                <div class="news-slider__item swiper-slide">
+                    <div class="news__item">
+                        <p class="news__txt">Dicas de profissionais da área da saúde mental</p>
+                        <div class="news__img">
+                            <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1698522692/dicasprofi_qiexu7.png" alt="Imagem do Card 1" class="img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-slider__item swiper-slide">
+                    <div class="news__item">
+                        <p class="news__txt">Diário privado para você registrar seus desabafos</p>
+                        <div class="news__img">
+                            <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1698522689/diario_nzf24h.png" alt="Imagem do Card 1" class="img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-slider__item swiper-slide">
+                    <div class="news__item">
+                        <p class="news__txt">Relatos de pessoas em situações relacionadas à saúde mental</p>
+                        <div class="news__img">
+                            <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1698522687/relatos_jcqazb.png" alt="Imagem do Card 1" class="img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-slider__item swiper-slide">
+                    <div class="news__item">
+                        <p class="news__txt">Textos informativos sobre temas relacionados à saúde mental</p>
+                        <div class="news__img">
+                            <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1698522691/informativos_e9q3kk.png" alt="Imagem do Card 1" class="img">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="news-slider__item swiper-slide">
+                    <div class="news__item">
+                        <p class="news__txt">Um quiz informativo sobre saúde mental</p>
+                        <div class="news__img">
+                            <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1698665977/quizpa_onhkgp.png" alt="Imagem do Card 1"  class="imgquiz">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="news-slider__item swiper-slide">
+                    <div class="news__item">
+                        <p class="news__txt">Onde buscar ajuda e apoio mental e psicológico</p>
+                        <div class="news__img">
+                            <img src="https://res.cloudinary.com/ddzdabbif/image/upload/v1698522964/onde_1_wumak9.png" alt="Imagem do Card 1" class="img">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="news-slider-prev swiper-button-prev"></div>
+            <div class="news-slider-next swiper-button-next"></div>
+        </div>
+        
+      
+   
+
+    
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var meuBotao = document.getElementById('meuBotao');
+        var meuBotao2 = document.getElementById('meuBotao2');
+
+        meuBotao.addEventListener('click', function () {
+            window.location.href = 'http://localhost/tcc%20-%20Copia/tela_login.php';
+        });
+
+        meuBotao2.addEventListener('click', function () {
+            window.location.href = 'http://localhost/tcc%20-%20Copia/tela_cadastro.html';
+        });
+    </script>
+
+    <script>
+        var bg = document.querySelector('.item-bg');
+
+        if ($(window).width() > 800) {
+            $(document).on("mouseover", ".news__item", function () {
+                var newsItem = document.querySelectorAll('.news__item');
+                newsItem.forEach(function (element, index) {
+                    element.addEventListener('mouseover', function () {
+                        var x = this.getBoundingClientRect().left;
+                        var y = this.getBoundingClientRect().top;
+                        var width = this.getBoundingClientRect().width;
+                        var height = this.getBoundingClientRect().height;
+                        $('.item-bg').addClass('active');
+                        $('.news__item').removeClass('active');
+
+                        bg.style.width = width + 'px';
+                        bg.style.height = height + 'px';
+                        bg.style.transform = 'translateX(' + x + 'px ) translateY(' + y + 'px)';
+                    });
+
+                    element.addEventListener('mouseleave', function () {
+                        $('.item-bg').removeClass('active');
+                        $('.news__item').removeClass('active');
+                    });
+                });
+            });
+        }
+
+        var swiper = new Swiper('.news-slider', {
+    effect: 'coverflow',
+    grabCursor: true,
+    loop: true,
+    centeredSlides: true,
+    keyboard: true,
+    spaceBetween: 0,
+    slidesPerView: 3,  // Defina o número de cards a serem exibidos
+    speed: 300,
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 0,
+        modifier: 3,
+        slideShadows: false
+    },
+    breakpoints: {
+        480: {
+            slidesPerView: 3  // Número de cards a serem exibidos em telas menores
+        }
+    },
+    simulateTouch: true,
+    navigation: {
+        nextEl: '.news-slider-next',
+        prevEl: '.news-slider-prev'
+    },
+    pagination: {
+        el: '.news-slider__pagination',
+        clickable: true
+    },
+    on: {
+        init: function () {
+            var activeItem = document.querySelector('.swiper-slide-active');
+            var sliderItem = activeItem.querySelector('.news__item');
+            $('.swiper-slide-active .news__item').addClass('active');
+            var x = sliderItem.getBoundingClientRect().left;
+            var y = sliderItem.getBoundingClientRect().top;
+            var width = sliderItem.getBoundingClientRect().width;
+            var height = sliderItem.getBoundingClientRect().height;
+            $('.item-bg').addClass('active');
+            bg.style.width = width + 'px';
+            bg.style.height = height + 'px';
+            bg.style.transform = 'translateX(' + x + 'px ) translateY(' + y + 'px)';
+        }
+    }
+});
+
+
+        swiper.on('touchEnd', function () {
+            $('.news__item').removeClass('active');
+            $('.swiper-slide-active .news__item').addClass('active');
+        });
+
+        swiper.on('slideChange', function () {
+            $('.news__item').removeClass('active');
+        });
+
+        swiper.on('slideChangeTransitionEnd', function () {
+            $('.news__item').removeClass('active');
+            var activeItem = document.querySelector('.swiper-slide-active');
+            var sliderItem = activeItem.querySelector('.news__item');
+            $('.swiper-slide-active .news__item').addClass('active');
+            var x = sliderItem.getBoundingClientRect().left;
+            var y = sliderItem.getBoundingClientRect().top;
+            var width = sliderItem.getBoundingClientRect().width;
+            var height = sliderItem.getBoundingClientRect().height;
+            $('.item-bg').addClass('active');
+            bg.style.width = width + 'px';
+            bg.style.height = height + 'px';
+            bg.style.transform = 'translateX(' + x + 'px ) translateY(' + y + 'px)';
+        });
+    </script>
+
+    <footer>
+        <p>Harmonize sua mente, encontre a serenidade: Mindful Harmony, seu refúgio para a saúde mental.</p>
+    </footer>
+</body>
+</html>
